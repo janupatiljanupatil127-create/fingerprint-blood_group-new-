@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fingerprint Based Blood Group Prediction</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Fingerprint-Based Blood Group Prediction</h1>
+    <p class="disclaimer">
+      ⚠️ Experimental ML demo, not a medical diagnostic tool. Always confirm
+      your blood group through a certified lab test.
+    </p>
+
+    <form id="predict-form">
+      <label for="fingerprint-input" class="upload-box" id="upload-box">
+        <span id="upload-label">Click to select a fingerprint image</span>
+        <img id="preview" alt="" hidden />
+      </label>
+      <input
+        type="file"
+        id="fingerprint-input"
+        name="image"
+        accept="image/*"
+        required
+        hidden
+      />
+      <button type="submit" id="submit-btn">Predict Blood Group</button>
+    </form>
+
+    <div id="result" class="result" hidden>
+      <h2 id="prediction-label"></h2>
+      <ul id="probability-list"></ul>
+    </div>
+
+    <div id="error" class="error" hidden></div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
