@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fingerprint-blood-prediction-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: FRONTEND_ORIGIN
+        value: "*"   # replace with your Vercel URL once deployed, e.g. https://your-app.vercel.app
+      - key: PYTHON_VERSION
+        value: 3.9.19
